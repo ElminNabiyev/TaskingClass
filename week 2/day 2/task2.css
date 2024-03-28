@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background-color: brown;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div{
+background-color: aqua ;
+border: 5px solid white;
+width: 200px;
+height: 100px;
+display: flex;
+justify-content: space-between;
+}
+.child2{
+    position:relative;
+    bottom: 50px;
+    right: 50px;
+
+}

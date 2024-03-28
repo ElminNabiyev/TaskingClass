@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=Number(prompt("ilk terefi daxil et"));
+        let b=Number(prompt("ikinci ededi daxil et"));
+        let c=Number(prompt("ucuncu teref"));
+        if(a===b && b===c && a===c){
+            console.log("beraber terefli");
+        }
+        else if(a===b || a===c || b===c){
+            console.log("beraber yanlidir");
+        }
+        else{
+            console.log("muxtelif tereflidir");
+        }
+
+    </script>
+</body>
+</html>
