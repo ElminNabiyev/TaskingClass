@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const shopping = {
+            id: 657,
+            brand: "iphone",
+            model: "14 pro max",
+            screeSize: "6.1inch",
+            batteryLevel: 4300,
+            price: 1000,
+            discountPercent: 30,
+            count: 20
+        }
+        // profit
+        const CalculateProfit = {
+            showProfit() {
+                let benefit = this.price - (this.price * this.discountPercent) / 100
+                let benfitResult = benefit * this.count + " " + "$" + " " + "alınan gəlir"
+                return benfitResult
+            }
+        }
+        const result = CalculateProfit.showProfit.bind(shopping)
+        console.log(result());
+        //battery
+        const DisplayBatteryLevel = {
+            setBattery() {
+                return this.batteryLevel + " " + "mAh" + " " + "batareya olçüsü"
+            }
+        }
+        const result1 = DisplayBatteryLevel.setBattery.bind(shopping)
+        console.log(result1());
+        // display details
+        const DisplayDetails = {
+            showDetails() {
+                return this.screeSize + " " + "ekran olçüsü"
+            }
+        }
+        const result2 = DisplayDetails.showDetails.bind(shopping)
+        console.log(result2());
+        // discount
+        const CalculateDiscount = {
+            showDsicount() {
+                return this.price - (this.price * this.discountPercent / 100) + " " + "$" + " " + "endirimli qiymətidir"
+            }
+        }
+        const result3 = CalculateDiscount.showDsicount.bind(shopping)
+        console.log(result3());
+        // methods
+        // price
+        const obj2 = {
+            id: 700,
+            brand: "hp",
+            model: "victus",
+            screeSize: "15.6inch",
+            batteryLevel: 10000,
+            price: 5000,
+
+        }
+        const obj3 = {
+            id: 600,
+            brand: "nokia",
+            model: "3310",
+            screeSize: "2.1inch",
+            batteryLevel: 4000,
+            price: 50,
+        }
+        const arr = [shopping, obj2, obj3]
+        function FilterbyPrice(arr, price) {
+            const arr2 = []
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].price > price) {
+                    arr2.push(arr[i].brand)
+                }
+            }
+            return arr2
+        }
+        console.log(FilterbyPrice(arr, 500));
+        // name
+        function FilterbyName(arr, name) {
+            for (let i = 0; i < arr.length; i++) {
+                if (name === arr[i].brand) {
+                    return true
+                }
+            }
+            return false
+        }
+        console.log(FilterbyName(arr, "hp"));
+        // profit
+        let sum = 0
+        function GetTotalProfit(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i].price
+            }
+            return sum
+        }
+        console.log(GetTotalProfit(arr));
+        // add price
+        function AddPrice(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                arr[i].price += 10
+            }
+            return arr
+        }
+        const emtArr=[]
+        let myArr = AddPrice(arr)
+        for (let i = 0; i < myArr.length; i++) {
+            emtArr.push(myArr[i].price)
+        }
+        console.log(emtArr);
+    </script>
+</body>
+
+</html>
