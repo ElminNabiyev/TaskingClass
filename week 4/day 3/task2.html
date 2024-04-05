@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Employee(name,surname,age,isMale=true,department,experienceYear,salary=0) {
+            this.name=name
+            this.surname=surname
+            this.age=age
+            this.isMale=isMale
+            this.department=department
+            this.experienceYear=experienceYear
+            this.salary=salary
+            this.getFullName=function () {
+                return surname[0].toUpperCase()+"."+name.toUpperCase()
+            }
+            this.generateID=function(){
+                return department[0].toUpperCase()+department[1].toUpperCase()+Math.random
+            }
+        }
+        const obj=new Employee("Elmin","Nebiyev",20,true,"AzerSu",7,7000)
+        // console.log(obj.getFullName());
+        // console.log(obj.generateID());
+        console.log(obj);
+    </script>
+</body>
+</html>

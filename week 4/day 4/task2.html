@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Human{
+        constructor(name,surname,age=0,gender,nationality){
+            this.name=name
+            this.surname=surname
+            this.age=age
+            this.gender=gender
+            this.nationality=nationality
+            
+        }
+        getFullName() {
+
+        }
+        getBirthYear(){
+
+        }
+        }
+        class User extends Human{
+            constructor(username,email,isAdmin,isLogged,password,bio){
+                super(name)
+                this.username=username
+                this.email=email
+                this.isAdmin=isAdmin
+                this.isLogged=isLogged
+                this.password=password
+                this.bio=bio
+            }
+            changePassword(currentPassword, newPassword) {
+                if (this.password!==currentPassword) {
+                    return alert("Parol sehvdir")
+                }
+                if (currentPassword===newPassword) {
+                    return alert("Parollar eynidir")
+                }
+                if (this.password===currentPassword) {
+                    this.password=newPassword
+                    return this.password
+                }
+            }
+            changeEmail(arr,newEmail){
+              for (let i = 0; i < arr.length; i++) {
+                if (newEmail!==arr[i].email) {
+                    this.email=newEmail
+                    return this.email
+                  
+                }else{
+                    alert("Var")
+                }   
+              }
+            }
+        }
+const human=new Human("elmin","Nabiyev",20,"Male","AZ")
+const user1=new User("aordOfElmin1","elmin@gmail.com",false,true,"1abc123","1necesen")
+const user2=new User("bordOfElmin2","elmin2@gmail.com",false,true,"2abc123","2necesen")
+const user3=new User("cordOfElmin3","elmin3@gmail.com",false,true,"3abc123","3necesen")
+// console.log(user1.changePassword("1abc123","1abc123"));
+const arr=[user1,user2,user3]
+// function sortUsersByUsername(arr) {
+//     const sort=arr.sort((a,b) => (a.username < b.username) ? 1 : ((b.username < a.username) ? -1 : 0))
+//     return sort
+// }
+// console.table(sortUsersByUsername(arr))
+console.log(user2.changeEmail(arr,"elmin@gmail"));
+    </script>
+</body>
+</html>
