@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // task1.1
+      function Milk(id, name, price, fatPercent, madeIn) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.fatPercent = fatPercent;
+        this.madeIn = madeIn;
+      }
+      const milk1 = new Milk(1, "GoodMilk", 5, 10, "China");
+      const milk2 = new Milk(423, "Pal", 15, 2, "Japon");
+      const milk3 = new Milk(142, "Milla", 3, 3, "Azerbaijan");
+      const arr = [milk1, milk2, milk3];
+      arr.forEach((x) => console.log(x.name));
+
+      // task 1.2
+      arr.find(x => x.id === 1 && console.log(x.name));
+
+      // task1.3
+      const result = arr.reduce((x, y) => x + y.price, 0);
+      console.log(Math.ceil(result/3));
+
+      // task1.4
+      arr.filter(x => x.fatPercent > 3 && console.log(x.name));
+
+      // task1.5
+      function addPrice(arr, num) {
+        return arr.map((x) => (x.price += num));
+      }
+      console.log(addPrice(arr, 10));
+
+      // task1.6
+      let total=arr.reduce((x, y) => x + y.price, 0)
+      console.log(total);
+
+      //task1.7=task1.2
+
+      //task1.8
+   let sorted=arr.sort((x,y)=>x.price-y.price)
+   console.log(sorted[sorted.length-1].name);
+
+   //task1.9
+   let ferq=sorted[sorted.length-1].price-sorted[0].price
+   console.log(ferq);
+
+   //task1.10
+   let result3=arr.some(x=> x.madeIn==="Azerbaijan")
+console.log(result3);
+    </script>
+  </body>
+</html>
