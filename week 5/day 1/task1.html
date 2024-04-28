@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sub{
+            background-color: red;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <button>-</button>
+    <span></span>
+    <button>+</button>
+    <script>
+        const buttons=document.querySelectorAll("button")
+        const span=document.querySelector("span")
+        let i=localStorage.getItem("span")||0
+        span.textContent=i
+
+
+
+        buttons[0].addEventListener("click",function () {
+            i--
+            span.textContent=i
+            localStorage.setItem("span",i)
+            if (i===0) {
+                buttons[0].classList.add("sub")
+            }
+        })
+        buttons[1].addEventListener("click",function () {
+            i++
+            if (i!==0) {
+                buttons[0].classList.remove("sub")
+            }
+            localStorage.setItem("span",i)
+            span.textContent=i
+        })
+
+    </script>
+</body>
+</html>
