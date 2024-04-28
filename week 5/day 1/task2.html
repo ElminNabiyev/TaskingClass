@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body style="text-align: center;">
+  <form id="form" action="">
+    <p class="todo">To Do</p>
+    <input type="text"><button id="plus">+</button>
+</form>
+<button id="clear_all">Clear All</button>
+    <script>
+        const add=document.getElementById("plus")
+        const form=document.getElementById("form")  
+        const clear=document.getElementById("clear_all")  
+        const ul=document.querySelector("ul")
+        const inp=document.querySelector("input")
+        const local = localStorage.getItem("todos");
+        let todos = local ? JSON.parse(local) : [];
+
+        todos.forEach((x) => create(x));
+
+        form.addEventListener("submit",function (e) {
+            e.preventDefault()
+            create(inp.value)
+            todos.push(inp.value);
+            localStorage.setItem("todos", JSON.stringify(todos));
+        })
+function create(val) {
+            const deleteButton=document.createElement("button")
+            const list=document.createElement("li")
+            const ul=document.createElement("ul")
+            
+            list.textContent=val
+            deleteButton.textContent="X"
+            
+            deleteButton.onclick=()=>{
+                list.remove()
+                deleteButton.remove()
+            }
+            ul.style.display="flex"
+            ul.style.listStyleType="none"
+            ul.style.justifyContent="center"
+            document.body.appendChild(ul)
+            ul.append(list,deleteButton) 
+            val=""
+}
+    </script>
+</body>
+</html>

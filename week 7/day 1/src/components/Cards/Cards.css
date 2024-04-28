@@ -1,0 +1,16 @@
+.container_card{
+    width: 80%;
+    margin: auto ;
+    padding: 70px 0px;
+    display: flex;
+}
+.img_div{
+    max-width: 268px;
+    min-height: 179px;
+}
+.card_imgs{
+    width: 100%;
+}
+.contents h2{
+
+}

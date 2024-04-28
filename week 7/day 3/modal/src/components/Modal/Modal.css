@@ -1,0 +1,12 @@
+body{
+    margin: auto;
+}
+.modal{
+    border: 1px solid white;
+    width: 300px;
+    display: none;
+    text-align: center;
+}
+.active{
+    display:block;
+}
